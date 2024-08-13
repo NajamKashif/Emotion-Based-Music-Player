@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up Page</title>
+    <link rel="stylesheet" href="style_signup.css">
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .input-group {
+            position: relative;
+        }
+        .visibility-toggle {
+            position: absolute;
+            top: 50%;
+            right: 10px;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h2>Sign Up</h2>
+        <form onsubmit="return validateForm()">
+            <div class="input-group">
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname" required>
+            </div>
+            <div class="input-group">
+                <label for="fname">Last Name:</label>
+                <input type="text" id="lname" name="lname" required>
+            </div>
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="input-group">
+                <label for="DOB">Date of Birth:</label>
+                <input type="date" id="dob" name="dob" required>
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" required>
+                    <span class="visibility-toggle" onclick="togglePasswordVisibility('password')">
+                        <i class="fas fa-eye" id="eye-icon"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="confirm_password">Confirm Password:</label>
+                <div class="password-wrapper">
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                    <span class="visibility-toggle" onclick="togglePasswordVisibility('confirm_password')">
+                        <i class="fas fa-eye" id="eye-icon"></i>
+                    </span>
+                </div>
+            </div>
+            <button type="submit">Sign Up</button>
+            <div class="login-link">
+                <p>Already have an account? <a href="index.html">Login</a></p>
+            </div>
+        </form>
+    </div>
+    <script>
+        function togglePasswordVisibility(inputId) {
+            var passwordField = document.getElementById(inputId);
+            var eyeIcon = passwordField.nextElementSibling.querySelector('i');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        
+        function validateForm() {
+            var fname = document.getElementById("fname").value;
+            var lname = document.getElementById("lname").value;
+            var username = document.getElementById("username").value;
+            var dob = document.getElementById("dob").value;
+            var password = document.getElementById("password").value;
+            var confirm_password = document.getElementById("confirm_password").value;
+
+            // Check for empty fields
+            if (fname == "" || lname == "" || username == "" || dob == "" || password == "" || confirm_password == "") {
+                alert("Please fill in all fields");
+                return false;
+            }
+
+            // Check for special characters in username
+            var specialChars = /[!@#$%^&*(),.?":{}|<>]/;
+            if (specialChars.test(username)) {
+                alert("Username should not contain special characters");
+                return false;
+            }
+
+            // Check if passwords match
+            if (password !== confirm_password) {
+                alert("Passwords do not match");
+                return false;
+            }
+
+            return true;
+        }
+    
+    </script>
+</body>
+</html>

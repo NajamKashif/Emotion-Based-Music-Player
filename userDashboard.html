@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Music Player Dashboard</title>
+    <link rel="stylesheet" href="style_userdashboard.css">
+    <link rel="stylesheet" href="welcome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>User Dashboard</h2>
+            <ul>
+                <li>
+                    <a href="user-update.html"><img class="img-responsive" src="botpng.jpeg" alt="bb"></a>
+                </li>
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="manage-userprofile.html">Manage Profile</a></li>
+                <li><a href="music.html">Make Playlist</a></li>
+                <li><a href="usersongs-list.html">Generate Playlist</a></li>
+                <li><a href="welcome.html">Logout</a></li>
+                <!-- <li><a href="manage-user.html">Manage Users</a></li> -->
+                
+
+
+
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2 class="centered">Welcome to Emotion Music Player</h2>
+            <div class="emotion-container">
+                <a href="#"class="emotion fear-emoji">
+                    
+                    <img src="download.jpeg" height="50px" width="50px" style="border-radius: 25px; " alt="">
+                    <span class="emoji-name">Fear</span>
+                </a>
+                <a href="#" class="emotion surprise-emoji">
+                    <img src="surprised.jpeg" height="50px" width="50px" style="border-radius: 25px;" alt="">
+                    
+                    <span class="emoji-name">Surprise</span>
+                </a>
+                <a href="#" class=" emotion angry-emoji">
+                    <img src="angry.jpeg" height="50px" width="50px" style="border-radius: 25px;" alt="">
+                    
+                    <span class="emoji-name">Angry</span>
+                </a>
+                <a href="#" class="emotion sad-emoji">
+                    <img src="sad.jpeg" height="50px" width="50px" style="border-radius: 25px;" alt="">
+                    <span class="emoji-name">Sad</span>
+                </a>
+                <a href="#" class="emotion neutral-emoji">
+                    <img src="neutral.jpeg" height="50px" width="50px" style="border-radius: 25px;" alt="">
+                    <span class="emoji-name">Neutral</span>
+                </a>
+                <a href="#" class="emotion happy-emoji">
+                    <img src="happy.jpeg" height="50px" width="50px" style="border-radius: 25px;" alt="">
+                    
+                    <span class="emoji-name">Happy</span>
+                </a>
+                <a href="#" class="emotion">
+                    <img src="disgus1.jpeg" height="50px" width="50px" style="border-radius: 25px;" alt="">
+                    
+                    <span class="emoji-name">Disgust</span>
+                </a>
+            </div>
+
+            <!-- Camera Feed Container -->
+            <div class="camera-feed">
+                <video id="video" width="540" height="380" autoplay poster="facial.jpeg"></video>
+                <button class="btn-secondary" id="start-camera">Detect Emotion</button>
+            </div>
+
+
+        </div>
+
+
+
+
+
+        <!-- Feedback section -->
+        <!-- <div class="feedback-container">
+            <h2>Feedback</h2>
+            <form class="feedback-form">
+                <input type="text" name="name" placeholder="Your Name">
+                <input type="text" name="email" placeholder="Your Email">
+                <textarea name="message" placeholder="Your Feedback"></textarea>
+                <input type="submit" value="Submit Feedback">
+            </form>
+        </div>
+    </div> -->
+
+        <script>
+            // document.getElementById('profileBtn').addEventListener('click', function (event) {
+            //     event.preventDefault(); // Prevent the default behavior of anchor tag
+            //     document.getElementById('profileContainer').style.display = 'block';
+            // });
+
+            document.getElementById('start-camera').addEventListener('click', async function () {
+                const video = document.getElementById('video');
+                if (navigator.mediaDevices.getUserMedia) {
+                    try {
+                        const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                        video.srcObject = stream;
+                    } catch (error) {
+                        console.error('Error accessing the camera: ', error);
+                    }
+                } else {
+                    alert('Your browser does not support media devices.');
+                    return;
+                }
+            });
+        </script>
+</body>
+
+</html>

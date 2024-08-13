@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <link rel="stylesheet" href="welcome.css">
+
+    <style>
+        /* Add CSS for background animation */
+        @keyframes slideBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Add CSS for music animations */
+        @keyframes pulseMusic {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .content {
+            text-align: center;
+            /* color: rgb(236, 241, 241); */
+            /* animation: pulseMusic 6s ease-in-out infinite alternate; */
+            /* Add music animation */
+            float: left;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            /* color: linear-gradient(90deg, #d53369 0%, #daae51 100%);; */
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .login-btn,
+        .signup-btn {
+            padding: 15px 30px;
+            border: 2px solid rgb(255, 234, 0);
+            /* Border color */
+            border-radius: 30px;
+            background-color: rgb(57, 54, 54);
+            /* Button background color */
+            color: white;
+            /* Text color */
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.2rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover,
+        .signup-btn:hover {
+            background-color: crimson;
+            /* Hover background color */
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="brand">Emotion Based Music Player</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!-- <li><a href="#">Login</a></li>
+                <li><a href="#">Sign Up</a></li> -->
+            </ul>
+        </div>
+    </nav>
+    <div class="background">
+        <h1 style="color: rgb(255, 234, 0)">Welcome to Emotion Based Music Player</h1>
+        <div class="content">
+            <p>
+                Free trial without signup....!
+            </p>
+            <div class="camera-feed">
+                <video id="video" width="440" height="280" autoplay poster="facial.jpeg"></video>
+            </div>
+            <br>
+            <div  class="buttons">
+                <a href="index.html" class="login-btn">Login</a>
+                <a href="signup.html" class="signup-btn">Sign Up</a>
+                <button class="login-btn" id="start-camera">Detect</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // document.getElementById('profileBtn').addEventListener('click', function (event) {
+        //     event.preventDefault(); // Prevent the default behavior of anchor tag
+        //     document.getElementById('profileContainer').style.display = 'block';
+        // });
+
+        document.getElementById('start-camera').addEventListener('click', async function () {
+            const video = document.getElementById('video');
+            if (navigator.mediaDevices.getUserMedia) {
+                try {
+                    const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+                    video.srcObject = stream;
+                } catch (error) {
+                    console.error('Error accessing the camera: ', error);
+                }
+            } else {
+                alert('Your browser does not support media devices.');
+                return;
+            }
+        });
+    </script>
+</body>
+
+</html>
