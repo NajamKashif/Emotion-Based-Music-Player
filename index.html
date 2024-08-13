@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Add Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .password-wrapper {
+            position: relative;
+        }
+
+        .visibility-toggle {
+            position: absolute;
+            right: 10px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="background"></div>
+    <div class="login-container">
+        <h1 style="color: yellow;">Emotion Based Music Player</h1>
+        <h2 style="color: white">Login</h2>
+
+        <form id="loginForm" onsubmit="return validateForm()">
+            <div class="input-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required placeholder="Username">
+            </div>
+            <div class="input-group">
+                <label for="password">Password:</label>
+                <div class="password-wrapper">
+                    <input type="password" id="password" name="password" required placeholder="Password">
+                    <span class="visibility-toggle" onclick="togglePasswordVisibility()">
+                        <i class="fas fa-eye" id="eye-icon" style="color: blue;"></i>
+                    </span>
+                </div>
+            </div>
+            <div class="input-group">
+                <label for="role">Login as:</label>
+                <select id="role" name="role" style="color: black;">
+                    <option value="customer">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+            </div>
+            <button type="submit">Login</button>
+            <p>Don't have an account? <a href="signup.html" class="signup-link">Sign Up</a></p> <!-- Link to sign up page -->
+            <p>Show User Dashboard <a href="userDashboard.html" class="signup-link">User</a></p> <!-- Link to User page -->
+            <p>Show Admin Dashboard <a href="admindash.html" class="signup-link">Admin</a></p> <!-- Link to Admin page -->
+
+
+        </form>
+    </div>
+    <!-- Add this div for the overlay text -->
+    <!-- <div class="overlay-text" id="overlayText">Emotion Based Music Player</div> -->
+
+    <!-- Add this div for displaying music text -->
+    <div id="music-text" class="music-text"></div>
+
+    <script>
+        // Array of music-related text
+        // var musicTexts = [
+        //     ".................W e l c o m e ................",
+            
+        //     ".................   Guys ................",
+        //     "Music can improve your Mood and Reduce stress.",
+        //     "Music can Boost your productivity.",
+        //     "Music has been shown to improve memory.",
+        //     "Music can help you fall asleep faster.",
+        // ];
+
+        // var currentIndex = 0;
+
+        // Function to display text and manage delays
+        function displayMusicText() {
+            var musicTextElement = document.getElementById('music-text');
+            var currentText = musicTexts[currentIndex];
+            var index = 0;
+            var interval = setInterval(function() {
+                musicTextElement.innerText = currentText.slice(0, index);
+                index++;
+                if (index > currentText.length) {
+                    clearInterval(interval);
+                    setTimeout(function() {
+                        musicTextElement.style.opacity = 0; // Fade out the text after a delay
+                        setTimeout(function() {
+                            currentIndex = (currentIndex + 1) % musicTexts.length; // Move to the next text
+                            changeOverlayColor(); // Change the color of the overlay text
+                            displayMusicText(); // Display the next text
+                        }, 3000); // Delay before displaying the next text
+                    }, 3000); // Delay before fading out
+                }
+            }, 80); // Typing speed
+            musicTextElement.style.opacity = 1; // Make the text visible
+        }
+
+        // Function to change the color of the overlay text
+        function changeOverlayColor() {
+            var overlayText = document.getElementById('overlayText');
+            var colors = ['#FFFFFF', '#DC143C', '#FFFF00', '#0000FF'];
+            var randomIndex = Math.floor(Math.random() * colors.length);
+            overlayText.style.color = colors[randomIndex];
+        }
+
+        // Function to toggle password visibility
+        function togglePasswordVisibility() {
+            var passwordField = document.getElementById('password');
+            var eyeIcon = document.getElementById('eye-icon');
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                eyeIcon.classList.remove('fa-eye');
+                eyeIcon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                eyeIcon.classList.remove('fa-eye-slash');
+                eyeIcon.classList.add('fa-eye');
+            }
+        }
+
+        //form validation for empty input
+         function validateForm() {
+        // Get input field values
+        var username = document.getElementById("username").value.trim();
+        var password = document.getElementById("password").value.trim();
+        
+        // Clear previous errors
+        document.getElementById("usernameError").innerHTML = "";
+        document.getElementById("passwordError").innerHTML = "";
+
+        // Check if inputs are empty
+        var isValid = true;
+        if (username === "") {
+            document.getElementById("usernameError").innerHTML = "Username is required";
+            isValid = false;
+        }
+        if (password === "") {
+            document.getElementById("passwordError").innerHTML = "Password is required";
+            isValid = false;
+        }
+
+        // Return false if validation fails
+        return isValid;
+    }
+
+        // Call the function initially
+        displayMusicText();
+    </script>
+</body>
+</html>

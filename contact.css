@@ -1,0 +1,154 @@
+/* Set base font size to 16px for better responsiveness */
+html {
+    font-size: 16px;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    /* height: 100%; */
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
+}
+
+.background {
+    background-image: url(wel2.avif); 
+    background-size: cover;
+    /* background-size: contain; Adjusted */
+    /* background-position: center; Adjusted */
+    /* background: linear-gradient(135deg, #f9d423, #ff4e50, #ff9505); */
+
+    height: 90vh;  
+    width: 100%; 
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    text-align: center; 
+}
+
+.content {
+    color: rgb(242, 239, 240);
+    background-color: rgba(27, 5, 5, 0.595);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0.1, 0, 0, 0.1);
+    max-width: 90%; /* Limit content width */
+    /* text-align: center; */
+    justify-content: space-between;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    /* color: linear-gradient(90deg, #e3ffe7 0%, #d9e7ff 100%); */
+}
+
+p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+}
+
+.buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* Allow buttons to wrap on small screens */
+}
+
+.login-btn, .signup-btn {
+    padding: 15px 30px;
+    border: 2px solid rgb(255, 234, 0);
+    border-radius: 30px;
+    background-color: rgb(57, 54, 54);
+    color: white;
+    text-decoration: none;
+    margin: 10px; /* Add margin between buttons */
+    font-size: 1.2rem;
+    transition: background-color 0.2s ease;
+}
+
+.login-btn:hover, .signup-btn:hover {
+    background-color: crimson;
+}
+.navbar {
+    background-color: #1a0b0b;
+    color: #f00b0b;
+    padding: 20px 0;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: solid;
+    color: #fff;
+    text-decoration: double;
+   
+}
+
+.nav-links {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+.nav-links li :hover{
+    background-color: crimson; /* Hover background color */
+
+}
+
+.nav-links li {
+    display: inline;
+    margin-right: 20px;
+    border-radius: 2px;
+    padding: 5px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+}
+.btn-secondary{
+    background-color: #7bed9f;
+    padding: 2%;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 10px;
+    border-radius: 3px;
+
+
+
+}
+.btn-secondary:hover{
+    background-color: #2ed573;
+
+}
+
+
+@media screen and (max-width: 768px) {
+    .content {
+        padding: 10px; /* Adjust padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Adjust heading size for smaller screens */
+    }
+
+    p {
+        font-size: 1.2rem; /* Adjust paragraph size for smaller screens */
+    }
+
+    .login-btn, .signup-btn {
+        font-size: 1rem; /* Adjust button size for smaller screens */
+        padding: 10px 20px; /* Adjust button padding for smaller screens */
+    }
+
+}

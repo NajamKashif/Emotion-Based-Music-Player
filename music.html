@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Music Player Dashboard</title>
+    <link rel="stylesheet" href="style_userdashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="musicss.css">
+    <link rel="stylesheet" href="welcome.css">
+    
+
+
+
+
+
+</head>
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>User Dashboard</h2>
+            <ul>
+                <li><a href="user-update.html"><img class="img-responsive" src="botpng.jpeg" alt="bb"></a></li>
+                <li><a href="userDashboard.html">Home</a></li>
+                <li><a href="manage-userprofile.html">Manage Profile</a></li>
+                <li><a href="#" class="active">Make Playlist</a></li>
+                <li><a href="usersongs-list.html">Generate Playlist</a></li>
+                <!-- <li><a href="manage-user.html">Manage User</a></li> -->
+                <li><a href="welcome.html">Logout</a></li>
+
+
+            </ul>
+        </div>
+
+        <div class="content" style="width: 600px;">
+            <h2 class="centered">Music Player</h2>
+
+
+
+            <br><br>
+            <div class="main-content">
+                <div class="wrapper">
+                    <div class="player">
+                        <img src="bgmusi.jpg" alt="Music Icon Thumbnail" class="thumbnail">
+                        <audio id="audioPlayer" src="dummy-audio.mp3"></audio>
+                        <div class="controls">
+                            <button id="prev"><i class="fas fa-step-backward"></i></button>
+                            <button id="play"><i class="fas fa-play"></i></button>
+                            <button id="next"><i class="fas fa-step-forward"></i></button>
+                            <button id="favorite"><i class="fas fa-heart"></i></button>
+                            <!-- <a href="userfavsongs.html">
+                                <button id="songsList"><i class="fas fa-list"></i></button>
+                            </a> -->
+                        </div>
+                        <div class="progress-container">
+                            <div class="progress-bar" id="progress-bar"></div>
+                        </div>
+
+
+                    </div>
+
+                    <div class="wrapper">
+                        <h1>Favorite Songs Playlist</h1>
+                        <br>
+                        <br>
+                        <br>
+                        <table class="tbl-full">
+                            <tr style="color: rgb(255, 234, 0);">
+                                <th>Song Name</th>
+                                <th>Album</th>
+                                <th>Actions
+                                <td>
+                                <td>
+                                    <a class="btn-danger">Remove</a>
+                                    <input class="btn-danger" type="search" placeholder="Search song" name="Search">
+
+                                    
+                                </td>
+                                </td>
+                                </th>
+        
+        
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+
+                </div>
+
+                <br><br>
+                <!-- <div class="feedback-container"> -->
+                <h2 style="color: yellow;">Feedback</h2>
+                <form class="feedback-form">
+                    <input type="text" name="name" placeholder="Your Name">
+                    <!-- <input type="text" name="Music Type" placeholder="Music Type"> -->
+                    <select name="role" id="role" value="Music Type">
+                        <option value="emotion">Sad</option>
+                        <option value="emotion">Happy</option>
+                        <option value="emotion">Angry</option>
+                        <option value="emotion">Disgust</option>
+                        <option value="emotion">Fear</option>
+                        <option value="emotion">Surprise</option>
+                    </select>
+                    <textarea name="message" placeholder="Your Feedback"></textarea>
+                    <br>
+                    <input type="submit" value="Submit Feedback" class="login-btn">
+                </form>
+                <!-- </div> -->
+
+
+
+
+            </div>
+            <script src="script.js"></script>
+
+
+
+
+
+
+            <script>
+                document.getElementById('profileBtn').addEventListener('click', function (event) {
+                    event.preventDefault(); // Prevent the default behavior of anchor tag
+                    document.getElementById('profileContainer').style.display = 'block';
+                });
+
+
+            </script>
+</body>
+
+</html>

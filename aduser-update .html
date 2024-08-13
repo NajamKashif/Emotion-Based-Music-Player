@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Emotion Music Player Dashboard</title>
+    <link rel="stylesheet" href="style_userdashboard.css">
+    <link rel="stylesheet" href="welcome.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li><a href="admin-profile.html"><img class="img-responsive" src="bot.png" alt="bb"></a></li>
+                <li><a href="admindash.html">Home</a></li>
+                <li><a href="admin-manage-profile.html">Manage Profile</a></li>
+                
+                <li><a href="manage-user.html" class="active">Manage Customer</a></li>
+
+                <!-- <li><a href="userDashboard.html">Home</a></li> -->
+                <!-- <li><a href="music.html">Playlists</a></li> -->
+                <li><a href="songs-list.html">Music PlayList</a></li>
+                <li><a href="welcome.html">Logout</a></li>
+
+            </ul>
+        </div>
+
+        <div class="content">
+            <h2 class="centered">Emotion Based Music Player</h2>
+            <div class="main-content">
+                <div class="wrapper">
+                    <h1>Change User Information</h1>
+                    <br>
+                    <br>
+                    <br>
+                    <form action=""method="POST">
+
+                        <table class="tbl-full">
+                            <tr>
+                                <td>First Name:</td>
+                                <td>
+                                    <input type="text" name="fname" value="" placeholder="First Name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Last Name:</td>
+                                <td>
+                                    <input type="text" name="lname" value="" placeholder="Last Name">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Username</td>
+                                <td>
+                                    <input type="text" name="username" value="" placeholder="Username">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Date Of Birth:</td>
+                                <td>
+                                    <input type="date" name="dob" value="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>Password:</td>
+                                <td>
+                                    <input type="text" name="password" value=""placeholder="Password">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colspan="2">
+                                    <input type="hidden" name="id" value="" >
+                                    <input type="submit" name="submit" value="Update" class="btn-secondary">
+                                </td>
+                            </tr>
+            
+                        </table>
+            
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+        </div>
+        
+    </div>
+
+    
+
+   
+</body>
+</html>

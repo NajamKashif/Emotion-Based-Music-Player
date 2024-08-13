@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Page</title>
+    <link rel="stylesheet" href="contact.css">
+
+    <style>
+        /* Add CSS for background animation */
+        @keyframes slideBackground {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        /* Add CSS for music animations */
+        @keyframes pulseMusic {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .content {
+            text-align: center;
+            /* color: rgb(236, 241, 241); */
+            /* animation: pulseMusic 6s ease-in-out infinite alternate; */
+            /* Add music animation */
+            float: left;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            /* color: linear-gradient(90deg, #d53369 0%, #daae51 100%);; */
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+            text-align: justify;
+        }
+
+        .buttons {
+            display: flex;
+            justify-content: center;
+        }
+
+        .login-btn,
+        .signup-btn {
+            padding: 15px 30px;
+            border: 2px solid rgb(255, 234, 0);
+            /* Border color */
+            border-radius: 30px;
+            background-color: rgb(57, 54, 54);
+            /* Button background color */
+            color: white;
+            /* Text color */
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1rem;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-btn:hover,
+        .signup-btn:hover {
+            background-color: crimson;
+            /* Hover background color */
+        }
+        input[type="text"]
+{
+    background: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    color: aliceblue;
+}
+input[type="textarea"]
+{
+    background: transparent;
+    border: none;
+    outline: none;
+    color: aliceblue;
+
+}
+    </style>
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="container">
+            <a href="#" class="brand">Emotion Based Music Player</a>
+            <ul class="nav-links">
+                <li><a href="welcome.html">Home</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <!-- <li><a href="#">Login</a></li>
+                <li><a href="#">Sign Up</a></li> -->
+            </ul>
+        </div>
+    </nav>
+    <div class="background">
+        <h1 style="color: rgb(255, 234, 0)">Get In Touch</h1>
+        <div class="content">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore mag na aliqua. Quis ipsum suspendisse ultrices gravida. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed doe iusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. </p>
+            <ul>
+                <li>GT Road , GIMS</li>
+                <li>+1237020445</li>
+                <li>contact@emotionbasedmp.com</li>
+            </ul>
+            <!-- <form action=""method="POST">
+
+                <table class="tbl-30">
+                    <tr>
+                        <td> Name:</td>
+                        <td>
+                            <input type="text" name="name" value="" placeholder="Your Name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Email:</td>
+                        <td>
+                            <input type="text" name="email" value="" placeholder="Email">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td>
+                           <textarea name="message" id="" placeholder="Type a Message"></textarea>
+                           
+                        </td>
+                    </tr>
+                 
+                   
+                    <tr>
+                        <td colspan="2">
+                            <input type="hidden" name="id" value="" >
+                            <input type="submit" name="submit" value="Submit" class="login-btn">
+                        </td>
+                    </tr>
+    
+                </table>
+    
+            </form> -->
+            <div class="input-group">
+                <label for="username">Name:</label>
+                <input  type="text" id="username" name="username" placeholder="Your Name">
+            </div><br>
+            <div class="input-group">
+                <label for="email">Email:</label>
+                <input type="text" id="username" name="email" placeholder="Email">
+            </div>
+            <br>
+           
+            <div class="input-group">
+                <label for="email">Message:</label>
+                <textarea name="message" type="text" id="" placeholder="Type a Message"></textarea>
+                
+            </div>
+            <br>
+            <input type="submit" name="submit" value="Submit" class="login-btn">
+
+
+        </div>
+    </div>
+
+
+</body>
+
+</html>
